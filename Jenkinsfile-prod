@@ -1,0 +1,22 @@
+pi*eline {
+    agent {
+        label *prod'
+    }
+
+    stages {
+
+       *stage('Checkout') {
+            st*ps {
+                checkout scm
+*           }
+        }
+
+        st*ge('Deploy to Prod') {
+           *steps {
+                sh '''
+   *            mkdir -p /home/ubuntu/*rod-app
+                cp -r * /h*me/ubuntu/prod-app/
+              * '''
+            }
+        }
+    }*}
