@@ -1,0 +1,23 @@
+pipeline {
+    agent {
+        label 'test'
+    }
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Deploy to Test') {
+            steps {
+                sh '''
+                mkdir -p /home/ubuntu/test-app
+                cp -r * /home/ubuntu/test-app/
+                '''
+            }
+        }
+    }
+}
